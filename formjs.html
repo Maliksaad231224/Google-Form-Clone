@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="form-container">
+
+<form id="submitform" autocomplete="on" >
+  
+         <div class="image">
+        <img src="download.jpg" alt="image">
+    </div>
+ 
+    <div class="assessment">
+      <h1>Product Information</h1>
+        
+         </div>
+    <div class="input">
+        <h2>Product ID</h2>
+        <input type="text" name="productID"  id="productID">
+    </div>
+    <div class="input" >
+        <h2>Product Name</h2>
+        <input type="text" name="productname" id="productname">
+    </div>
+<div class="radio">
+     <h2>Product description</h2>
+        <input type="text" name="description" id="description">
+ 
+</div>
+     <div class="input">
+        <h2>Quantity</h2>
+        <input type="number" name="quantity" id="quantity">
+    </div>
+
+     <div class="assessment">
+        <h1>Personal Information</h1>
+      
+    </div>
+     <div class="input">
+        <h2>First Name</h2>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+     <div class="input">
+        <h2>Last Name</h2>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+     <div class="input">
+        <h2>Address</h2>
+        <input type="text" name="address" id="address">
+    </div>
+     <div class="input">
+        <h2>Phone number</h2>
+        <input type="number" name="phone" id="phone">
+    </div>
+ <div class="input">
+        <h2>Age</h2>
+        <input type="number" name="age" id="age">
+    </div>
+
+<div class="submit">
+<button type="submit">Submit</button>
+</div>
+</form>
+</div>
+
+ <script>
+    let myform=document.getElementById('submitform');
+
+
+myform.addEventListener('submit',function(event){
+let productID = document.getElementById('productID');
+let productname = document.getElementById('productname');
+let quantity = document.getElementById('quantity').value;
+let description = document.getElementById('description');
+let firstname = document.getElementById('firstname');
+let lastname = document.getElementById('lastname');
+let address = document.getElementById('address');
+let phone = document.getElementById('phone');
+let age = document.getElementById('age');
+
+    if (productID.value.trim().length < 3 ){
+    alert('Product ID less than 3 characters');
+}
+
+if (productname.value.trim().length < 3 ){
+   alert('Product name less than 3 characters');
+}
+
+if (description.value.trim().length < 3 ){
+   alert('description less than 3 characters');
+
+}if (firstname.value.trim().length < 3 ){
+    alert('firstname less than 3 characters');
+
+}if (lastname.value.trim().length < 3 ){
+    alert('lastname less than 3 characters');
+}if (address.value.trim().length < 3 ){
+   alert('address less than 3 characters');
+}
+
+if(phone.value.trim().length < 11){
+    alert('Phone number less than 11 characters');
+}
+
+if (quantity <= 0 || quantity>=5){
+  alert('Quantity should be more than 0 or less and 5');
+}else{
+
+let price = 100;
+let totalprice = 0;
+totalprice= quantity * price;
+console.log(`Total price is: $${totalprice}`);
+        alert(`Success! Total price is $${totalprice}`);
+
+}
+
+
+
+});
+
+   </script>
+</body>
+
+</html>
